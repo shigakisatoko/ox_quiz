@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'"> -->
+  <script src="components/loader.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+<!-- webフォントを読み込む(font-awesomeをCDNで読み込む) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+  <link rel="stylesheet" href="css/substyle.css">
+  <link rel="stylesheet" href="css/dynamic.min.css">
+  <link rel="stylesheet" href="css/magic.min.css">
+  <link rel="stylesheet" href="css/wickedcss.min.css">
+  <link rel="stylesheet" href="css/motion.min.css">
+  <link rel="stylesheet" href="css/csshake.min.css">
+  <!-- 国旗をCDNで取り込み -->
+  <link rel="stylesheet" href="https://unpkg.com/flag-icon-css@2.8.0/css/flag-icon.min.css">
+  <!-- <script src="./js/main.js"></script> -->
+  <script src="./js/submain.js"></script>
+</head>
+
+<body>
+
+<!--　　　　                                    　-->
+<!--      漫画　※このまとまりの場所は変えられない)    -->
+<!--　　　                                    　　-->
+<!-- 全てのクイズに対応-->
+<ons-template id="disaster_comic.html">
+    <ons-page id="disaster_comic_page">
+        <ons-toolbar>
+            <div class="left"><ons-back-button>BACK</ons-back-button></div>
+            <div class="center">Behavior when 'disaster' happens</div>
+        </ons-toolbar>
+        
+        <div id="comic_area">
+            <!-- <img src="./img/typhoon01_comic.png" alt="image" class="comic" style="visibility:hidden;"> -->
+            <img src="./img/interval.png" alt="image" class="comic">
+        </div>
+        
+        <div class="closeArea">
+            <ons-button onclick="backHome()">CLOSE</ons-button>
+        </div>
+    </ons-page>
+</ons-template>
+
+<!--　　                     　　 -->               
+<!-- ナビゲーションについての記述 -->
+<!--　　　　                      -->
+<ons-navigator id="navigator" page="login.html"></ons-navigator>
+
+<!-- page1,page2のタブ -->
+<ons-template id="home.html">
+    <ons-page id="home-page">
+        <ons-toolbar>
+            <div class="center" id="toolbar-title"></div>
+        </ons-toolbar>
+        <ons-tabbar position="auto">
+            <ons-tab label="Disasters" page="tab1.html" active> </ons-tab>
+            <ons-tab label="-" page="tab2.html"> </ons-tab>
+        </ons-tabbar>
+    </ons-page>
+</ons-template>
+
+
+<!--      　　　　-->
+<!-- ログイン画面 -->
+<!--　      　　　-->
+<ons-template id="login.html">
+<ons-page id="login-page">
+    <div style="text-align: left; margin-top: -10%; margin-left: 25%;"> 
+        <!-- 名前 -->
+        <p style="color: white; font-size: 1.5em;"><ons-input id="userName" placeholder="Nickname" string></ons-input></p>
+        
+        </p>
+    </div>    
+        <!--<p><ons-input id="password" modifier="underbar" type="password" placeholder="Password" float></ons-input></p>-->
+        <!-- ログインのボタン -->
+        <p style="margin-top: 1em; text-align: center;"><ons-button onclick="login()">Login</ons-button></p>   
+</ons-page>
+</ons-template>
+    
+    
+<!--　　　　    -->
+<!-- ホーム画面 -->
+<!--　　　　    -->
+<ons-template id="tab1.html">
+    <ons-page id="first-page">
+    
+    <!-- 画像の要素を入れていく-->
+    <!-- 以下は古い方 -->
+        <img src="./img/tmp07.png" width="170%" id="ground">
+        <!--<img src="./img/house.png" id="house" width="45%" class="shake shake-constant" onclick="get_ansLog('earthquake')">-->
+        <!--<img src="./img/tsunami01.png" height="70%" id="tsunami" class="animated infinite slideInRight">-->
+        <!--<img src="./img/typhoon01.png" width="50%" id="typhoon" class="animated infinite slideOutRight">-->
+        <!-- 台風の動きを上記にしてみた <img src="./img/typhoon01.png" width="300" id="typhoon" class="magictime sideToSide" onclick="showDialog('typhoon')">-->
+        <!--<img src="./img/volcano.png" width="45%" id="volcano">-->
+        <!--<img src="./img/volcano_smoke.png" width="45%" id="volcano_smoke" class="dynamic jump infinite">-->
+        <!--<img src="./img/snow_cloud.png" width="45%" id="snow_cloud">-->
+        <!--<img src="./img/snow.png" width="45%" id="snow" class="animated infinite slideInDown">-->
+    <!-- webフォント -->
+        <!--<i class="fa fa-times fa-3x" aria-hidden="true"></i>-->
+        
+    <!-- 以下は新しい法 -->
+        <img src="./img/_earthquake.png" id="house" width="90%" class="shake shake-constant" onclick="get_ansLog('earthquake')">
+        <img src="./img/_typhoon.png" width="70%" id="typhoon" class="animated infinite slideOutRight" onclick="get_ansLog('typhoon')">
+        <img src="./img/_snow_cloud.png" width="65%" id="snow_cloud" onclick="get_ansLog('snow')">
+        <img src="./img/_snow.png" width="65%" id="snow" class="animated infinite slideInDown" onclick="get_ansLog('snow')">
+    <!-- webフォント -->
+    </ons-page>
+</ons-template>
+
+
+<!--　　　　        -->
+<!-- ランキング画面 -->
+<!--　　　　        -->
+<ons-template id="tab2.html">
+    <ons-page id="second-page">
+        Please wait to make this contents.
+        <!-- グラフをかく -->
+        <!--<div class="container">
+            <div id="ranking_message">YOUR RANKING</div>
+                <canvas id="chart-canvas"></canvas>
+        </div>-->
+    </ons-page>
+</ons-template>-->
+
+
+<!--　　　　　　　　　-->
+<!-- クイズダイアログ -->
+<!--　　　　　　　　　-->
+
+<!-- 台風のクイズ -->
+<ons-dialog id="quiz_dialog" cancelable animation-options="{timing:'ease-in'}">
+    <div class="question_font" style="text-align: center; padding: 10px;">
+        <div class="headline">TYPHOON<br/></div>
+        <div class="message">In such a case,<br/>what would you do?</div>
+        <div class="which">Please Select!</div>
+
+        <ons-row>
+            <ons-col><img src="./img/tmp_quiz.png" class="quiz_image quiz_left"></ons-col>
+            <ons-col width="10px"></ons-col>
+            <ons-col><img src="./img/tmp_quiz.png" class="quiz_image quiz_right"></ons-col>
+        </ons-row>
+    </div>
+</ons-dialog>
+
+
+<!--　　　　　　　-->
+<!-- 正解・不正解 -->
+<!--　　　　　　　-->
+
+<!--台風のクイズの正解・不正解-->
+<ons-template id="quiz_result.html">
+    <ons-page id="quiz_result_page">
+        <ons-toolbar>
+            <div class="left"><ons-back-button>BACK</ons-back-button></div>
+            <div class="center">Result</div>
+        </ons-toolbar>
+        
+        <div id="excellent">EXCELLENT</div>
+        <div id="mistake">MISTAKE</div>
+        
+        <div class="answer">
+        <ons-row>
+            <ons-col><img src="./img/tmp_quiz.png" class="answer_image answer_left" alt="image"></ons-col>
+            <ons-col width="10px"></ons-col>
+            <ons-col> <img src="./img/tmp_quiz.png" class="answer_image answer_right" alt="image"></ons-col>
+        </ons-row>
+        
+        <div class="openAnswer">
+            <ons-button onclick="showComic()" class="animated pulse infinite">Learn by comics</ons-button>
+        </div>
+                
+        <!-- グラフをかく -->
+        <!--<canvas id="chart-canvas"></canvas> グラフ２つを並べることはできない -->
+        <div class="container">
+            <div id="correct_rate">Correct rate</div>
+            <canvas id="chart-pie"></canvas>
+        </div>
+    </ons-page>
+</ons-template>
+
+</body>
+</html>

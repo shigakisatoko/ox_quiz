@@ -1,0 +1,320 @@
+/*
+.→クラス
+#→ID
+
+*/
+
+/*全部に適応*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+}
+
+/* 全てのボタンに適応 */
+.button {
+    font-size: 1.9em;
+    padding-top: 2px;
+    box-shadow: 4px 4px #555;
+}
+
+.button:hover {
+background-color: #3cc4bd;
+box-shadow: 0 3px 0 #12978d, 0 6px 0px rgba(0,0,0,0.2);
+-webkit-transform: translateY(3px);
+transform: translateY(3px);
+}
+
+.button:active {
+color: #ddd;
+background-color: #12978d;
+box-shadow: 0 0 0 #047c71, 0 0 0px rgba(0,0,0,0.2);
+-webkit-transform: translateY(6px);
+transform: translateY(6px);
+transition-duration: 0.1s;
+}
+
+
+
+/*********************************
+ *
+ * ログイン画面
+ *
+ *********************************/
+/* 背景に画像を持ってくる*/
+#login-page .page__background {
+    /*background-image: url('./../img/login_background01.png');*/
+    background-image: url('./../img/background_nonchar3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*width: 110%;*/
+    margin: 0 auto;
+}
+
+/* 入力フォームの背景色の設定 */
+#userName, #password{
+    opacity: 0.5;
+    background-color: white;
+}
+
+#age{
+    size: 0.5em;
+    opacity: 0.5;
+    background-color: white;
+}
+
+/* 性別の選択の文字 */
+#male_char, #female_char {
+    color: orange;
+}
+
+/* 国籍選択の文字の設定 */
+.select-input {
+    padding-right: 0.3em;
+    padding-left: 0.4em;
+    color: orange;
+    font-size: 1em;
+}
+
+/* 入力フォームの位置*/
+#userName {
+    margin-top: 30%;
+}
+
+#age {
+    margin-top: 1%; 
+}
+
+/* 文字を大きくする．これがどこに使われているかわからないから保留*/
+/*.text-input__label {
+  font-size: 1.25em;
+  padding-left: 10px;
+}*/
+
+
+
+/*********************************
+ *
+ * ホーム画面
+ *
+ *********************************/
+#first-page > .page__content {
+    overflow-y: hidden !important;
+}
+
+/*背景の曇り空の設定*/
+#first-page .page__background {
+    /*background: url(img/back_ground.png) no-repeat center;*/
+    background-image: url('./../img/home_background.png');
+}
+
+#ground {
+    position: absolute;
+    bottom: 0%;
+}
+
+#tsunami {
+    position: absolute;
+    bottom: 0%;
+    right: -50%;
+}
+
+#house {
+    position: absolute;
+    bottom: 35%;
+    right: 10%;
+}
+
+
+#typhoon {
+    position: absolute;
+    bottom: -10%;
+    right: 80%;
+}
+
+#volcano {
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+
+#volcano_smoke {
+    position: absolute;
+    top: 3%;
+    left: 10%;
+}
+
+#snow_cloud {
+    position: absolute;
+    top: 0%;
+    left: 70%;
+}
+
+#snow {
+    position: absolute;
+    top: 70%;
+    left: 70%;
+}
+
+
+/*********************************
+ *
+ * クイズダイアログ
+ *
+ *********************************/
+ 
+/*クイズのダイアログのサイズ調節*/
+.dialog {
+    width: 90%;
+}
+
+/*ダイアログの〇・×それぞれのイラスト*/
+.quiz_image {
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 4px 4px #555;
+}
+
+/*マウスが被った時に影がつく*/
+/*.quiz_image {
+    box-shadow: 4px 4px #555;ackground: 
+    box-shadow: 0 4px 0 #555, 0 6px 0px rgba(0,0,0,0.2);
+    -webkit-transform: translateY(3px);
+    transform: translateY(3px);
+}*/
+
+/* クイズを押したときにふわってする処理 */
+.quiz_image:active {
+    color: #ddd;
+    box-shadow: 0 0 0 #555, 0 0 0px rgba(0,0,0,0.2);
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+    transition-duration: 0.1s;
+}
+
+/*ダイアログ見出しの文字*/
+.headline {
+    background-color: #1e90ff;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 2.5em;
+}
+
+/*ダイアログの「Such a Situation, Will You」の文字サイズ*/
+.message {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+/*ダイアログの「Please Select!」の文字サイズ*/
+.which {
+    font-size: 1.25em;
+}
+
+/*********************************
+ *
+ * 正解・不正解の画面
+ *
+ *********************************/
+
+/*答えの〇・×それぞれのイラスト*/
+.answer_image {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/*答えの〇・×イラストをまとめたクラス*/
+.answer {
+    margin-top: 0px;
+}
+
+/*『LEARN BY COMIC』の文字サイズ*/
+.openAnswer .button {
+    font-size: 1.9em; 
+    
+}
+
+/*『LEARN BY COMICS』ボタンの配置*/
+.openAnswer {
+    text-align: center;
+    margin-bottom: 10%;
+    margin-top: 10%;
+}
+
+/* 正解・不正解のメッセージ */
+#excellent, #mistake {
+    display: none;
+    text-align: center;
+    font-size: 3.9em;
+    font-weight: bold;
+}
+
+/*『excellent』の文字色を変える*/
+#excellent {
+    color: DarkOrange;
+    text-align: center;
+    /*box-shadow: 4px 4px #555555;*/
+}
+
+
+/*『mistake』の文字色を変える*/
+#mistake {
+    color: red;
+    text-align: center;
+}
+
+/* グラフの設定  */
+/*#chart-canvas {
+    max-width: 100%;
+    margin: 0 auto;    
+}
+
+#chart-canvas, #pointLabels {
+    fontSize: 20;
+} */
+
+/* 円グラフの説明文 */
+#correct_rate {
+    text-align: center;
+    font-size: 1.9em;
+    font-weight: bold;
+}
+ 
+/* 円グラフのサイズを調節(うまくいっていない気がする) */
+.chartjs-render-monitor {
+    max-width: 100%;
+    margin: 0 auto; 
+}
+
+/*********************************
+ *
+ * 漫画の提示
+ *
+ *********************************/
+
+/* 漫画のサイズ調節 */
+.comic {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/*『CLOSE』ボタンの配置*/
+.closeArea {
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+/*『CLOSE』の文字サイズ*/
+.closeArea .button {
+    font-size: 1.9em;
+}
+
+
+
+
